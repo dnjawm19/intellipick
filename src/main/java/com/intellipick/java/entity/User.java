@@ -2,6 +2,7 @@ package com.intellipick.java.entity;
 
 
 import com.intellipick.java.dto.request.SignupRequestDto;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,7 +37,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserRole> authorities = new ArrayList<>();
 
     public static User create(SignupRequestDto signupRequestDto) {
