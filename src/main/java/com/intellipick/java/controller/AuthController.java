@@ -1,6 +1,8 @@
 package com.intellipick.java.controller;
 
+import com.intellipick.java.dto.request.SignRequestDto;
 import com.intellipick.java.dto.request.SignupRequestDto;
+import com.intellipick.java.dto.response.SignResponseDto;
 import com.intellipick.java.dto.response.SignupResponseDto;
 import com.intellipick.java.service.AuthService;
 import jakarta.validation.Valid;
@@ -18,5 +20,10 @@ public class AuthController {
     @PostMapping("/signup")
     public SignupResponseDto signup(@Valid @RequestBody SignupRequestDto signupRequestDto) {
         return authService.signup(signupRequestDto);
+    }
+
+    @PostMapping("/sign")
+    public SignResponseDto sign(@Valid @RequestBody SignRequestDto signRequestDto) {
+        return authService.sign(signRequestDto);
     }
 }
