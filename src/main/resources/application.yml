@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY}
+  refresh:
+    secret:
+      key: ${JWT_REFRESH_SECRET_KEY}
