@@ -33,4 +33,11 @@ public class UserRole {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public static UserRole create(User user) {
+        return UserRole.builder()
+            .authorityName("ROLE_USER")
+            .user(user)
+            .build();
+    }
 }
