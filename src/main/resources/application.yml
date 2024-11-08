@@ -6,7 +6,7 @@ spring:
     driver-class-name: ${DB_DRIVER}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${HIBERNATE_DDL_AUTO}
 
 jwt:
   secret:
