@@ -1,5 +1,6 @@
 package com.intellipick.java.dto.mapper;
 
+import com.intellipick.java.dto.response.SignResponseDto;
 import com.intellipick.java.dto.response.SignupResponseDto;
 import com.intellipick.java.entity.User;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,13 @@ public class AuthMapper {
             user.getUsername(),
             user.getNickname(),
             authorityNameList
+        );
+    }
+
+    public SignResponseDto convertToSignResponseDto(String accessToken, String refreshToken) {
+        return new SignResponseDto(
+            accessToken,
+            refreshToken
         );
     }
 }
