@@ -11,3 +11,12 @@ spring:
 jwt:
   secret:
     key: ${JWT_SECRET_KEY}
+
+springdoc:
+  api-docs:
+    version: openapi_3_1
+    enabled: true
+    path: ${API_DOCS_PATH}
+    enable-spring-security: true
+    default-consumes-media-type: application/json
+    default-produces-media-type: application/json
